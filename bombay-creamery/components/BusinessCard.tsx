@@ -1,0 +1,4 @@
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { businessModels } from "@/lib/site";
+export default function BusinessCard({model}:{model:typeof businessModels[number]}){return <article className="business-card"><span className="eyebrow">BUSINESS OPPORTUNITY</span><h3>{model.name}</h3><p>{model.summary}</p><div className="mini-stats"><div><small>Stated investment</small><strong>{model.investment}</strong></div><div><small>Territory</small><strong>{model.territory}</strong></div></div><Link className="arrow-link" href={`/${model.slug}`}>Explore {model.name}<ArrowUpRight size={17}/></Link></article>}
